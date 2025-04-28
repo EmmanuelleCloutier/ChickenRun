@@ -16,6 +16,3 @@ Special chickens may appear during the game. When caught, they **unlock temporar
 
 The game immerses players in a **lively farm setting**, filled with **comical characters** and realistic behaviors. The chickens are designed with an **exaggerated, humorous style**, offering the perfect balance of **immersion** and **comedy**. The lively farm environment enhances this playful atmosphere, making it an enjoyable experience.
 
----
-
-Feel free to copy and paste this directly into your `README.md` file for a clean layout. Let me know if you need any further adjustments! 😊
