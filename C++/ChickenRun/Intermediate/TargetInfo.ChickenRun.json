@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "ChickenRun",
+			"Path": "..\\Source\\ChickenRun.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "ChickenRunEditor",
+			"Path": "..\\Source\\ChickenRunEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
