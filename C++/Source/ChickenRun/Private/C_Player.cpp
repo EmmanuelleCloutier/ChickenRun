@@ -1,7 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ChickenRunCharacter.h"
-#include "ChickenRunProjectile.h"
+#include "ChickenRun/Public/C_Player.h"
+#include "ChickenRun/UnrealBaseProjet/ChickenRunProjectile.h"
 #include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -16,7 +16,7 @@ DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 //////////////////////////////////////////////////////////////////////////
 // AChickenRunCharacter
 
-AChickenRunCharacter::AChickenRunCharacter()
+AC_Player::AC_Player()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
@@ -38,7 +38,7 @@ AChickenRunCharacter::AChickenRunCharacter()
 
 }
 
-void AChickenRunCharacter::BeginPlay()
+void AC_Player::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
@@ -46,7 +46,7 @@ void AChickenRunCharacter::BeginPlay()
 
 //////////////////////////////////////////////////////////////////////////// Input
 
-void AChickenRunCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void AC_Player::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {	
 	// Set up action bindings
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
@@ -56,10 +56,10 @@ void AChickenRunCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
 
 		// Moving
-		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AChickenRunCharacter::Move);
+		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AC_Player::Move);
 
 		// Looking
-		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AChickenRunCharacter::Look);
+		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AC_Player::Look);
 	}
 	else
 	{
@@ -68,7 +68,7 @@ void AChickenRunCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 }
 
 
-void AChickenRunCharacter::Move(const FInputActionValue& Value)
+void AC_Player::Move(const FInputActionValue& Value)
 {
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
@@ -81,7 +81,7 @@ void AChickenRunCharacter::Move(const FInputActionValue& Value)
 	}
 }
 
-void AChickenRunCharacter::Look(const FInputActionValue& Value)
+void AC_Player::Look(const FInputActionValue& Value)
 {
 	// input is a Vector2D
 	FVector2D LookAxisVector = Value.Get<FVector2D>();

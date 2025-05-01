@@ -2,7 +2,7 @@
 
 
 #include "TP_WeaponComponent.h"
-#include "ChickenRunCharacter.h"
+#include "ChickenRun/Public/C_Player.h"
 #include "ChickenRunProjectile.h"
 #include "GameFramework/PlayerController.h"
 #include "Camera/PlayerCameraManager.h"
@@ -66,7 +66,7 @@ void UTP_WeaponComponent::Fire()
 	}
 }
 
-bool UTP_WeaponComponent::AttachWeapon(AChickenRunCharacter* TargetCharacter)
+bool UTP_WeaponComponent::AttachWeapon(AC_Player* TargetCharacter)
 {
 	Character = TargetCharacter;
 

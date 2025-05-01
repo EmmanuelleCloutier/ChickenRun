@@ -1,7 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ChickenRunGameMode.h"
-#include "ChickenRunCharacter.h"
+#include "ChickenRun/Public/ChickenRunGameMode.h"
+#include "ChickenRun/Public/C_Player.h"
 #include "UObject/ConstructorHelpers.h"
 
 AChickenRunGameMode::AChickenRunGameMode()

@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
-#include "ChickenRunCharacter.generated.h"
+#include "C_Player.generated.h"
 
 class UInputComponent;
 class USkeletalMeshComponent;
@@ -17,7 +17,7 @@ struct FInputActionValue;
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(config=Game)
-class AChickenRunCharacter : public ACharacter
+class AC_Player : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -38,7 +38,7 @@ class AChickenRunCharacter : public ACharacter
 	UInputAction* MoveAction;
 	
 public:
-	AChickenRunCharacter();
+	AC_Player();
 
 protected:
 	virtual void BeginPlay();
