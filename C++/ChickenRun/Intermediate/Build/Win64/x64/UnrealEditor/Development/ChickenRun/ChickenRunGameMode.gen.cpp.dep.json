@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\emman\\documents\\github\\chickenrun\\c++\\chickenrun\\intermediate\\build\\win64\\unrealeditor\\inc\\chickenrun\\uht\\chickenrungamemode.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\emman\\documents\\github\\chickenrun\\c++\\chickenrun\\intermediate\\build\\win64\\x64\\chickenruneditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\emman\\documents\\github\\chickenrun\\c++\\chickenrun\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\chickenrun\\definitions.chickenrun.h",
+            "c:\\users\\emman\\documents\\github\\chickenrun\\c++\\chickenrun\\source\\chickenrun\\chickenrungamemode.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "c:\\users\\emman\\documents\\github\\chickenrun\\c++\\chickenrun\\intermediate\\build\\win64\\unrealeditor\\inc\\chickenrun\\uht\\chickenrungamemode.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

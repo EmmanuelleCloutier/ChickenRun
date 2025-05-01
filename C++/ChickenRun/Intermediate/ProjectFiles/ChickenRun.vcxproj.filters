@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\ChickenRun.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ChickenRun.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\ChickenRunEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\ChickenRun">
+      <UniqueIdentifier>{463E89D1-2F36-38A0-8236-9C2D9DB445EA}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ChickenRun\ChickenRun.Build.cs">
+      <Filter>Source\ChickenRun</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\ChickenRun\ChickenRun.cpp">
+      <Filter>Source\ChickenRun</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ChickenRun\ChickenRun.h">
+      <Filter>Source\ChickenRun</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ChickenRun\ChickenRunCharacter.cpp">
+      <Filter>Source\ChickenRun</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ChickenRun\ChickenRunCharacter.h">
+      <Filter>Source\ChickenRun</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ChickenRun\ChickenRunGameMode.cpp">
+      <Filter>Source\ChickenRun</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ChickenRun\ChickenRunGameMode.h">
+      <Filter>Source\ChickenRun</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ChickenRun\ChickenRunPlayerController.cpp">
+      <Filter>Source\ChickenRun</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ChickenRun\ChickenRunPlayerController.h">
+      <Filter>Source\ChickenRun</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ChickenRun\ChickenRunProjectile.cpp">
+      <Filter>Source\ChickenRun</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ChickenRun\ChickenRunProjectile.h">
+      <Filter>Source\ChickenRun</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ChickenRun\TP_PickUpComponent.cpp">
+      <Filter>Source\ChickenRun</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ChickenRun\TP_PickUpComponent.h">
+      <Filter>Source\ChickenRun</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ChickenRun\TP_WeaponComponent.cpp">
+      <Filter>Source\ChickenRun</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ChickenRun\TP_WeaponComponent.h">
+      <Filter>Source\ChickenRun</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
