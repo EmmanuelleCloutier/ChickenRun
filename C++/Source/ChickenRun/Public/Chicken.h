@@ -5,7 +5,6 @@
 #include "Chicken.generated.h"
 
 class USphereComponent;
-class UAnimSequence;
 
 UCLASS()
 class CHICKENRUN_API AChicken : public ACharacter
@@ -23,7 +22,5 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Collision")
 	USphereComponent* SphereComponent;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation");
-	UAnimSequence* SpawnAnimation;
+	
 };

@@ -4,10 +4,12 @@
 #include "Perception/AISense_Sight.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/Character.h"
+
 
 AAIC_Chicken::AAIC_Chicken()
 {
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 
 	AIPerceptionComp = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("AIPerceptionComp"));
 	SetPerceptionComponent(*AIPerceptionComp);
@@ -35,10 +37,30 @@ void AAIC_Chicken::BeginPlay()
 {
 	Super::BeginPlay();
 
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Begin play aicchicken"));
+
 	if (BT_Roam)
 	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("into btroam"));
+
 		RunBehaviorTree(BT_Roam);
 		bIsFleeing = false;
+	}
+	if (!BT_Roam)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("BT_Roam is NULL!"));
+	}
+}
+
+void AAIC_Chicken::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	ACharacter* ControlledCharacter = Cast<ACharacter>(GetPawn());
+	if (ControlledCharacter && ControlledCharacter->GetVelocity().Size() > 0.0f)
+	{
+		FRotator NewRotation = FRotationMatrix::MakeFromX(ControlledCharacter->GetVelocity()).Rotator();
+		ControlledCharacter->SetActorRotation(NewRotation);
 	}
 }
 

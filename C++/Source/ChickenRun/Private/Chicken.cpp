@@ -17,18 +17,16 @@ AChicken::AChicken()
 
 	AIControllerClass = AAIC_Chicken::StaticClass();
 	AutoPossessAI =	EAutoPossessAI::PlacedInWorldOrSpawned;
+
+	GetCharacterMovement()->bOrientRotationToMovement = true;
+	bUseControllerRotationYaw = false;
 	
 }
 
 void AChicken::BeginPlay()
 {
 	Super::BeginPlay();
-
-	if (SpawnAnimation && GetMesh())
-	{
-		GetMesh()->PlayAnimation(SpawnAnimation, false);
-	}
-	
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Begin play chicken"));
 }
 
 
