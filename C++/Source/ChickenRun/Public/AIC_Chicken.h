@@ -19,14 +19,14 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
+	UPROPERTY()
+	const UBehaviorTree* CurrentBT;
+
 public:
 	virtual void Tick(float DeltaTime) override;
 	
 	UFUNCTION()
 	void OnPerceptionUpdate(const TArray<AActor*>& UpdatedActors);
-
-	UFUNCTION()
-	void OnTargetPerceptionUpated(AActor* Actor, FAIStimulus Stimulus);
 
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category = "AI")
 	UAIPerceptionComponent* AIPerceptionComp;

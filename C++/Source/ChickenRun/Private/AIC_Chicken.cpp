@@ -5,7 +5,7 @@
 #include "BehaviorTree/BehaviorTree.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/Character.h"
-
+#include "Engine/Engine.h"
 
 AAIC_Chicken::AAIC_Chicken()
 {
@@ -29,9 +29,10 @@ AAIC_Chicken::AAIC_Chicken()
 	}
 
 	AIPerceptionComp->OnPerceptionUpdated.AddDynamic(this, &AAIC_Chicken::OnPerceptionUpdate);
-	AIPerceptionComp->OnTargetPerceptionUpdated.AddDynamic(this, &AAIC_Chicken::OnTargetPerceptionUpated);
-}
 
+	CurrentBT = nullptr;
+	bIsFleeing = false;
+}
 
 void AAIC_Chicken::BeginPlay()
 {
@@ -42,11 +43,11 @@ void AAIC_Chicken::BeginPlay()
 	if (BT_Roam)
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("into btroam"));
-
 		RunBehaviorTree(BT_Roam);
+		CurrentBT = BT_Roam;
 		bIsFleeing = false;
 	}
-	if (!BT_Roam)
+	else
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("BT_Roam is NULL!"));
 	}
@@ -64,37 +65,29 @@ void AAIC_Chicken::Tick(float DeltaTime)
 	}
 }
 
-
 void AAIC_Chicken::OnPerceptionUpdate(const TArray<AActor*>& UpdatedActors)
 {
 	for (AActor* Actor : UpdatedActors)
 	{
 		if (Actor && Actor->ActorHasTag(FName("Fuite")))
 		{
-			// Lancer fuite si pas déjà en mode fuite
-			if (!bIsFleeing && BT_Flee)
+			if (!bIsFleeing && BT_Flee && CurrentBT != BT_Flee)
 			{
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Orange, TEXT("into btfuite"));
 				RunBehaviorTree(BT_Flee);
+				CurrentBT = BT_Flee;
 				bIsFleeing = true;
 			}
 			return;
 		}
 	}
-}
 
-void AAIC_Chicken::OnTargetPerceptionUpated(AActor* Actor, FAIStimulus Stimulus)
-{
-	if (Actor && Actor->ActorHasTag(FName("Fuite")))
+	// Si aucun acteur "Fuite" n'est vu et on est en mode fuite, revenir à Roam
+	if (bIsFleeing && BT_Roam && CurrentBT != BT_Roam)
 	{
-		if (!Stimulus.WasSuccessfullySensed())
-		{
-			// Si perte de vue et on était en fuite, relancer Roam
-			if (bIsFleeing && BT_Roam)
-			{
-				RunBehaviorTree(BT_Roam);
-				bIsFleeing = false;
-			}
-		}
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("back to roam"));
+		RunBehaviorTree(BT_Roam);
+		CurrentBT = BT_Roam;
+		bIsFleeing = false;
 	}
 }
-
