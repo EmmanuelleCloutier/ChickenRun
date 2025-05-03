@@ -12,6 +12,11 @@
 #include "Components/SphereComponent.h"
 #include "EngineUtils.h"
 #include "Engine/LocalPlayer.h"
+#include "Blueprint/UserWidget.h"
+#include "Kismet/GameplayStatics.h"
+#include "Components/TextBlock.h"  
+
+
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -36,12 +41,22 @@ AC_Player::AC_Player()
 	//Mesh1P->SetRelativeRotation(FRotator(0.9f, -19.19f, 5.2f));
 	Mesh1P->SetRelativeLocation(FVector(-30.f, 0.f, -150.f));
 
+	NbChickenPickedUp = 0;
 }
 
 void AC_Player::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+
+	if (ChickenCountWidgetClass)
+	{
+		ChickenCountWidget = CreateWidget<UUserWidget>(GetWorld(), ChickenCountWidgetClass);
+		if (ChickenCountWidget)
+		{
+			ChickenCountWidget->AddToViewport();
+		}
+	}
 	
 }
 
@@ -82,8 +97,23 @@ void AC_Player::TryPickupChicken()
 			if (Chicken->SphereComponent->IsOverlappingActor(this))
 			{
 				Chicken->Pickup();
+				NbChickenPickedUp++;
+				UpdateChickenCountUI();
 				break;
 			}
+		}
+	}
+}
+
+void AC_Player::UpdateChickenCountUI()
+{
+	if (ChickenCountWidget)
+	{
+		
+		UTextBlock* ChickenCountText = Cast<UTextBlock>(ChickenCountWidget->GetWidgetFromName(TEXT("ChickenCountText")));
+		if (ChickenCountText)
+		{
+			ChickenCountText->SetText(FText::AsNumber(NbChickenPickedUp));
 		}
 	}
 }

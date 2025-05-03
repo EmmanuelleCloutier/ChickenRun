@@ -46,7 +46,6 @@ protected:
 	virtual void BeginPlay();
 
 public:
-	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* LookAction;
 
@@ -63,11 +62,20 @@ public:
 	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
 
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
-
-
+	
 	UFUNCTION()
 	void TryPickupChicken();
-	
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pickup")
+	int32 NbChickenPickedUp;
+
+	UPROPERTY(BlueprintReadOnly, Category = "UI")
+	UUserWidget* ChickenCountWidget;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "UI")
+	TSubclassOf<UUserWidget> ChickenCountWidgetClass;
+
+	void UpdateChickenCountUI();
 
 };
 
