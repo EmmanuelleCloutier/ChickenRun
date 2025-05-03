@@ -1,5 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
 #include "ChickenRun/Public/C_Player.h"
 #include "ChickenRun/UnrealBaseProjet/ChickenRunProjectile.h"
 #include "Animation/AnimInstance.h"
@@ -10,11 +8,13 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "Engine/LocalPlayer.h"
+#include "ChickenRun/Public/Chicken.h"
+#include "Components/SphereComponent.h"
+#include "EngineUtils.h"
+#include "Engine/LocalPlayer.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
-//////////////////////////////////////////////////////////////////////////
-// AChickenRunCharacter
 
 AC_Player::AC_Player()
 {
@@ -42,6 +42,7 @@ void AC_Player::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+	
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
@@ -60,10 +61,30 @@ void AC_Player::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AC_Player::Look);
+
+		//PickUp Chicken
+		EnhancedInputComponent->BindAction(PickupAction, ETriggerEvent::Triggered, this, &AC_Player::TryPickupChicken);
 	}
 	else
 	{
 		UE_LOG(LogTemplateCharacter, Error, TEXT("'%s' Failed to find an Enhanced Input Component! This template is built to use the Enhanced Input system. If you intend to use the legacy system, then you will need to update this C++ file."), *GetNameSafe(this));
+	}
+}
+
+void AC_Player::TryPickupChicken()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("cliking e"));
+	for (TActorIterator<AChicken> It(GetWorld()); It; ++It)
+	{
+		AChicken* Chicken = *It;
+		if (Chicken && Chicken->SphereComponent)
+		{
+			if (Chicken->SphereComponent->IsOverlappingActor(this))
+			{
+				Chicken->Pickup();
+				break;
+			}
+		}
 	}
 }
 

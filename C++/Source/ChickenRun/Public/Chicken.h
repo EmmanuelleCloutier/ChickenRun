@@ -22,5 +22,11 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Collision")
 	USphereComponent* SphereComponent;
+
+	UPROPERTY()
+	class ASpawner* SpawnerReference;
+
+	UFUNCTION()
+	void Pickup();
 	
 };

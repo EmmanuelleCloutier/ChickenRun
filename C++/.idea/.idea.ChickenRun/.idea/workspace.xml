@@ -12,11 +12,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a11f7d26-6f05-404e-a1b2-057ed95e71f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Source/ChickenRun/Private/Spawner.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ChickenRun/Public/Spawner.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChickenRun/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChickenRun/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChickenRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChickenRun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/AI/BT_FindCover.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_AIC_Chicken.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_AIC_Chicken.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ChickenRun/Private/AIC_Chicken.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ChickenRun/Private/AIC_Chicken.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Chicken.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Chicken.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Input/IMC_Default.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Input/IMC_Default.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/B/68/P3X74IUD0K0MX6I1PDPS26.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/B/68/P3X74IUD0K0MX6I1PDPS26.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ChickenRun/Private/C_Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ChickenRun/Private/C_Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ChickenRun/Private/Chicken.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ChickenRun/Private/Chicken.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ChickenRun/Public/C_Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ChickenRun/Public/C_Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ChickenRun/Public/Chicken.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ChickenRun/Public/Chicken.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +33,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2wXnCibrNCgmme2PXatqIwBorN5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,7 +53,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "settings.editor.selected.configurable": "CodeLensConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -127,7 +134,10 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -140,6 +150,7 @@
       <option name="presentableId" value="Default" />
       <updated>1746196661686</updated>
       <workItem from="1746196663107" duration="1096000" />
+      <workItem from="1746297311301" duration="3125000" />
     </task>
     <servers />
   </component>

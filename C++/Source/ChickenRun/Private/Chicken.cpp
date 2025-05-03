@@ -1,8 +1,11 @@
 ﻿#include "ChickenRun/Public/Chicken.h"
+
+#include "Spawner.h"
 #include "Components/SphereComponent.h"
 #include "Animation/AnimSequence.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "ChickenRun/Public/AIC_Chicken.h"
+#include "EngineUtils.h"
 
 
 AChicken::AChicken()
@@ -33,5 +36,20 @@ void AChicken::BeginPlay()
 void AChicken::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+}
+
+void AChicken::Pickup()
+{
+	for (TActorIterator<ASpawner> It(GetWorld()); It; ++It)
+	{
+		ASpawner* Spawner = *It;
+		if (Spawner)
+		{
+			Spawner->SpawnChicken();  
+			break;  
+		}
+	}
+	
+	Destroy();
 }
 
