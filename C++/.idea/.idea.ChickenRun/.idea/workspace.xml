@@ -11,8 +11,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a11f7d26-6f05-404e-a1b2-057ed95e71f6" name="Changes" comment="">
+    <list default="true" id="8755f6b8-1197-4120-8fcf-0f9c4201c037" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Source/ChickenRun/Private/ChickenCountWidget.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ChickenRun/Public/ChickenCountWidget.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChickenRun/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChickenRun/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChickenRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChickenRun/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ChickenRun/ChickenRun.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ChickenRun/ChickenRun.Build.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ChickenRun/Private/C_Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ChickenRun/Private/C_Player.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ChickenRun/Public/C_Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ChickenRun/Public/C_Player.h" afterDir="false" />
     </list>
@@ -21,14 +25,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 8
-}</component>
-  <component name="ProjectId" id="2wXnCibrNCgmme2PXatqIwBorN5" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2wgaocET8R8Otckc6khjtELETn6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,7 +51,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CodeLensConfigurable",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -125,23 +132,19 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile">
-        <settings />
-      </deployment>
-      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <deployment type="dockerfile" />
       <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a11f7d26-6f05-404e-a1b2-057ed95e71f6" name="Changes" comment="" />
-      <created>1746196661686</created>
+      <changelist id="8755f6b8-1197-4120-8fcf-0f9c4201c037" name="Changes" comment="" />
+      <created>1746465847230</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1746196661686</updated>
-      <workItem from="1746196663107" duration="1096000" />
-      <workItem from="1746297311301" duration="3908000" />
+      <updated>1746465847230</updated>
+      <workItem from="1746465848902" duration="586000" />
     </task>
     <servers />
   </component>

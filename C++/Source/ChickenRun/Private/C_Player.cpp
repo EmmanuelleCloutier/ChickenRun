@@ -1,5 +1,4 @@
 #include "ChickenRun/Public/C_Player.h"
-#include "ChickenRun/UnrealBaseProjet/ChickenRunProjectile.h"
 #include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -13,8 +12,7 @@
 #include "EngineUtils.h"
 #include "Engine/LocalPlayer.h"
 #include "Blueprint/UserWidget.h"
-#include "Kismet/GameplayStatics.h"
-#include "Components/TextBlock.h"  
+#include "ChickenRun/Public/ChickenCountWidget.h"
 
 
 
@@ -51,12 +49,14 @@ void AC_Player::BeginPlay()
 
 	if (ChickenCountWidgetClass)
 	{
-		ChickenCountWidget = CreateWidget<UUserWidget>(GetWorld(), ChickenCountWidgetClass);
-		if (ChickenCountWidget)
+		GetChickenCountWidget = CreateWidget<UChickenCountWidget>(GetWorld(), ChickenCountWidgetClass);
+		if (GetChickenCountWidget)
 		{
-			ChickenCountWidget->AddToViewport();
+			GetChickenCountWidget->AddToViewport();
+			GetChickenCountWidget->SetChickenCount(NbChickenPickedUp);
 		}
 	}
+
 	
 }
 
@@ -107,14 +107,9 @@ void AC_Player::TryPickupChicken()
 
 void AC_Player::UpdateChickenCountUI()
 {
-	if (ChickenCountWidget)
+	if (GetChickenCountWidget)
 	{
-		
-		UTextBlock* ChickenCountText = Cast<UTextBlock>(ChickenCountWidget->GetWidgetFromName(TEXT("ChickenCountText")));
-		if (ChickenCountText)
-		{
-			ChickenCountText->SetText(FText::AsNumber(NbChickenPickedUp));
-		}
+		GetChickenCountWidget->SetChickenCount(NbChickenPickedUp);
 	}
 }
 

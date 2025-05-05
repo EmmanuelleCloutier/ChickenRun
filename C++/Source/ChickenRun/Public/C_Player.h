@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "ChickenRun/Public/ChickenCountWidget.h"
 #include "C_Player.generated.h"
 
 class UInputComponent;
@@ -69,11 +70,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pickup")
 	int32 NbChickenPickedUp;
 
-	UPROPERTY(BlueprintReadOnly, Category = "UI")
-	UUserWidget* ChickenCountWidget;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
+	TSubclassOf<class UChickenCountWidget> ChickenCountWidgetClass;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "UI")
-	TSubclassOf<UUserWidget> ChickenCountWidgetClass;
+	UPROPERTY()
+	UChickenCountWidget* GetChickenCountWidget;
 
 	void UpdateChickenCountUI();
 
