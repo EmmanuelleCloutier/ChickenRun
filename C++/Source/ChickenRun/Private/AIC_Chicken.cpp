@@ -38,18 +38,18 @@ void AAIC_Chicken::BeginPlay()
 {
 	Super::BeginPlay();
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Begin play aicchicken"));
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Begin play aicchicken"));
 
 	if (BT_Roam)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("into btroam"));
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("into btroam"));
 		RunBehaviorTree(BT_Roam);
 		CurrentBT = BT_Roam;
 		bIsFleeing = false;
 	}
 	else
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("BT_Roam is NULL!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("BT_Roam is NULL!"));
 	}
 }
 
@@ -73,7 +73,7 @@ void AAIC_Chicken::OnPerceptionUpdate(const TArray<AActor*>& UpdatedActors)
 		{
 			if (!bIsFleeing && BT_Flee && CurrentBT != BT_Flee)
 			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Orange, TEXT("into btfuite"));
+				//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Orange, TEXT("into btfuite"));
 				RunBehaviorTree(BT_Flee);
 				CurrentBT = BT_Flee;
 				bIsFleeing = true;
@@ -85,7 +85,7 @@ void AAIC_Chicken::OnPerceptionUpdate(const TArray<AActor*>& UpdatedActors)
 	// Si aucun acteur "Fuite" n'est vu et on est en mode fuite, revenir à Roam
 	if (bIsFleeing && BT_Roam && CurrentBT != BT_Roam)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("back to roam"));
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("back to roam"));
 		RunBehaviorTree(BT_Roam);
 		CurrentBT = BT_Roam;
 		bIsFleeing = false;

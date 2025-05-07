@@ -88,7 +88,7 @@ void AC_Player::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AC_Player::TryPickupChicken()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("cliking e"));
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("cliking e"));
 	for (TActorIterator<AChicken> It(GetWorld()); It; ++It)
 	{
 		AChicken* Chicken = *It;

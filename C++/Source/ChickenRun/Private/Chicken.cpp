@@ -29,7 +29,7 @@ AChicken::AChicken()
 void AChicken::BeginPlay()
 {
 	Super::BeginPlay();
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Begin play chicken"));
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Begin play chicken"));
 }
 
 
