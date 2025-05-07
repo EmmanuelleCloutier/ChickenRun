@@ -1,4 +1,4 @@
-# 🐔 **Chicken Run: Chicken Chase**
+# 🐔 **Chicken Run**
 
 **Chicken Run: Chicken Chase** is an **action and puzzle game** set in a **rural and humorous** environment. Within a fenced enclosure, the player is tasked with **catching as many chickens as possible** before time runs out. This casual action game, featuring elements of **artificial intelligence**, is designed to be **easy to pick up**, yet challenging enough to keep players engaged.
 
