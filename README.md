@@ -8,8 +8,6 @@
 
 The goal is simple: **catch as many chickens** as you can before the timer runs out. However, the chickens are not easy targets! They are **intelligent and organized**, reacting to the player's movements and fleeing in groups to avoid capture.
 
-Special chickens may appear during the game. When caught, they **unlock temporary abilities** that help the player **catch more chickens** in a limited time, adding a layer of strategy to the gameplay.
-
 ---
 
 ##  **Atmosphere and Design**
